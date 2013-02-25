@@ -1,0 +1,35 @@
+%h1= @song.name
+-if @song.image != nil
+  %div= image_tag(@song.image)
+  %br
+-if @song.filename != nil
+  %div= audio_tag(@song.filename, :controls => true)
+  %br
+-if @song.artist != nil
+  %div
+    %span Artist:
+    %span= link_to(@song.artist.name, artist_path(@song.artist.id))
+    %br
+-if @song.album != nil
+  %div
+    %span Album:
+    %span= link_to(@song.album.name, album_path(@song.album.id))
+    %br
+-if @song.genres != nil
+  %div
+    %span Genres:
+    %ul
+    -@song.genres.each do |genre|
+      %li= link_to(genre.name, genre_path(genre.id))
+      %br
+
+- if @current_user.present? && !@current_user.is_admin
+  -if  !@current_user.mixtapes.map(&:songs).flatten.include?(@song) && @current_user.balance >= @song.price
+    %div
+      %span= link_to(@song.price, purchase_song_path(@song.id), :class=>'button radius')
+  -else
+    %div
+      %span= link_to(@song.price, purchase_song_path(@song.id), :class=>'button disabled')
+-else
+  %div
+    %span= link_to(@song.price, purchase_song_path(@song.id), :class=>'button disabled')

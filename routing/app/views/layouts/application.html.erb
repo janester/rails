@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Routing</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="/a">A</a></li>
+      <li><a href="/b">B</a></li>
+      <li><a href="/c">C</a></li>
+      <li><form action="/a" method="get">
+        <input type="text" name="page">
+        <button>Go!</button>
+      </form></li>
+    </ul>
+  </nav>
+
+<%= yield %>
+
+</body>
+</html>

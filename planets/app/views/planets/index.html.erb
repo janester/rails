@@ -1,0 +1,11 @@
+<ul>
+  <% @planets.each do |x| %>
+    <li><%= link_to(x.name, planet_path(x.id)) %></li>
+        <%= button_to("delete", delete_path(x.id)) %>
+        <%= button_to("edit", edit_path(x.id), :method => :get) %>
+      <ul>
+        <li>orbit: <%= x.orbit %></li>
+        <li>moons: <%= pluralize(x.moons, "moon") %></li>
+      </ul>
+  <% end %>
+</ul>

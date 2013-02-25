@@ -1,0 +1,7 @@
+%h1 Mixtapes
+%table
+  - @mixtapes.each do |mixtape|
+    %tr
+      %td= link_to(mixtape.name, mixtape_path(mixtape.id))
+      %td= link_to("Edit", edit_mixtape_path(mixtape.id), :class=>"button radius")
+      %td= link_to("Delete", mixtape, :method => :delete, :class=>"button radius alert")

@@ -1,0 +1,14 @@
+#users
+  %table
+    - @users.each do |user|
+      %tr
+        %td
+          -if user == @current_user
+            %span.alert.label= user.name
+          - else
+            %span.success.label= user.name
+        %td
+          %span= image_tag(user.image)
+        %td= number_to_currency(user.balance)
+        %td= link_to("Delete", user, :method=>:delete, :confirm => "Are you sure you want to delete this person?", :class=>"button radius alert") if user != @current_user
+

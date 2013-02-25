@@ -1,0 +1,8 @@
+%h1 Genres
+%table
+  - @genres.each do |genre|
+    %tr
+      %td= link_to(genre.name, genre_path(genre.id))
+      -if @current_user.present? && @current_user.is_admin
+        %td= link_to("Edit", edit_genres_path(genre.id), :class=>"button radius")
+        %td= link_to("Delete", genre, :method => :delete, :class=>"button radius alert")

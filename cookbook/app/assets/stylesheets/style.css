@@ -1,0 +1,72 @@
+@import url(http://fonts.googleapis.com/css?family=Cedarville+Cursive);
+
+
+body {
+  background: #142341;
+  color: white;
+}
+#head {
+  width: 1000px;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 20px;
+}
+img {
+  border: 2px solid #F9C536;
+  width: 300px;
+  heigh: 300px;
+}
+
+h1 {
+  font-size: 80px;
+  font-family: 'Comic Zine OT';
+  color: white;
+}
+nav li {
+  display: inline-block;
+  font-size: 20px;
+  font-family: 'Cedarville Cursive', cursive;
+}
+.book_cont {
+  border: 2px dashed black;
+  width: 800px;
+  margin: auto;
+  background: #F9C536;
+}
+.img_div {
+  text-align: center;
+}
+h2, h3 {
+  font-size: 30px;
+  padding: 10px;
+  font-family: 'Cedarville Cursive', cursive;
+  color: #D90707;
+}
+.recipes_img{
+  text-align: center;
+}
+.recipes_container img {
+  width: 340px;
+  height: 250px;
+}
+.ingredients_cont img {
+  width: 250px;
+  height: 200px;
+}
+.ingredients_cont {
+  text-align: center;
+}
+.ing_sub_cont {
+  display: inline-block;
+}
+a, a:visited {
+  color: #D90707;
+  text-decoration: none;
+}
+a:hover {
+  color: white;
+}
+.recipe_container:nth-child(odd)
+{
+  background: #5E3723;
+}

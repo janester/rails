@@ -1,0 +1,12 @@
+<h1>Artists</h1>
+<% @artists.each do |artist| %>
+<section>
+  <div><%= link_to(artist.name, artist) %></div>
+  <div><%= image_tag(artist.image) %></div>
+  <div><%= artist.nationality %></div>
+  <div><%= artist.dob.strftime("%B %d, %Y") %></div>
+  <div><%= artist.period %></div>
+  <hr>
+
+</section>
+<% end %>

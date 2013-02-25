@@ -1,0 +1,30 @@
+<section class="book_section" id="show">
+  <div><%= @book.title %></div>
+  <div><%= image_tag(@book.cover) %></div>
+  <div><span>Released: </span>
+    <% if @book.released.nil? %>
+      <span></span>
+      <% else %>
+      <%= @book.released.strftime("%B %d, %Y") %>
+    <% end %>
+  </div>
+  <div><span>Publisher: </span><%= @book.publisher %></div>
+  <div><span>Genre: </span><%= @book.genre %></div>
+  <div id="edit_del">
+    <%= link_to("Delete", @book, :method => :delete, :confirm => "Is it okay to delete?") %>
+    <%= link_to("Edit", edit_book_path, :method => :get) %>
+  </div>
+</section>
+
+
+
+
+<div>
+  <section class="author_section">
+    <div id="h3"><h3>Author:</h3></div>
+    <div><%= link_to(@book.author.name, @book.author) %></div>
+    <div><%= image_tag(@book.author.image) %></div>
+    <div><span>Age: </span><%= @book.author.age %></div>
+    <div><span>Awards: </span><%= @book.author.awards %></div>
+  </section>
+</div>

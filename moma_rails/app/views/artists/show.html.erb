@@ -1,0 +1,19 @@
+<div><%= link_to(@artist.name, @artist) %></div>
+<div><%= image_tag(@artist.image) %></div>
+<div><%= @artist.nationality %></div>
+<div><%= @artist.dob.strftime("%B %d, %Y") %></div>
+<div><%= @artist.period %></div>
+
+<%= link_to("Delete", @artist, :method => :delete, :confirm => "Is it okay to delete?") %>
+<%= link_to("Edit", edit_artist_path(@artist), :method => :get) %>
+
+<hr>
+<h1>Paintings</h1>
+
+  <% @artist.paintings.each do |painting| %>
+    <div><%= painting.title %></div>
+    <div><%= image_tag(painting.image) %></div>
+    <div><%= painting.year %></div>
+    <div><%= painting.medium %></div>
+    <div><%= painting.style %></div>
+  <% end %>

@@ -1,0 +1,10 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: moma_rails_development
+  pool: 5
+  host: localhost
+  username: janesternbach
+  password:
+
+

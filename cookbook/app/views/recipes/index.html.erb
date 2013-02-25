@@ -1,0 +1,14 @@
+<ol>
+  <% @recipes.each do |recipe| %>
+    <li><%= link_to(recipe.name, recipe) %>
+      <ul>
+        <li><%= image_tag(recipe.image) %></li>
+        <li>Course: <%= recipe.course %></li>
+        <li>Cooktime: <%= minutes_to_human(recipe.cooktime) %></li>
+        <li>Serving Size : <%= recipe.servingsize %></li>
+        <li>Instructions: <%= recipe.instructions %></li>
+      </ul>
+    </li>
+  <% end %>
+</ol>
+

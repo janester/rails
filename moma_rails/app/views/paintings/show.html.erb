@@ -1,0 +1,7 @@
+<div><%= @painting.title %></div>
+<div><%= image_tag(@painting.image) %></div>
+<div><%= @painting.year %></div>
+<div><%= @painting.medium %></div>
+<div><%= @painting.style %></div>
+
+<%= link_to("Delete", @painting, :method => :delete, :confirm => "Is it okay to delete?") %>

@@ -1,0 +1,101 @@
+@import url(http://fonts.googleapis.com/css?family=Fredericka+the+Great);
+@import url(http://fonts.googleapis.com/css?family=Montserrat+Subrayada);
+@import url(http://fonts.googleapis.com/css?family=Fjalla+One);
+@import url(http://fonts.googleapis.com/css?family=Almendra+Display);
+
+body {
+/*  background: url(/assets/leatherback.png) repeat;*/
+ /* background: -webkit-radial-gradient(center, ellipse cover,  #7d7e7d 0%,#0e0e0e 72%);*/ /* Chrome10+,Safari5.1+ */
+  background: white;
+  width: 1000px;
+  margin: auto;
+  color: white;
+  font-family: 'Almendra Display', cursive;
+  font-size: 40px;
+
+}
+.container {
+/*  border: 1px dashed white;*/
+  background: #007C7C;
+  margin: 20px 0 20px 0;
+  text-align: center;
+  padding: 20px 0 20px 0;
+
+}
+h1 {
+  color: #FFD300;
+  font-family: 'Fredericka the Great', cursive;
+  font-size: 100px;
+  text-align: center;
+  padding-top: 20px;
+}
+nav {
+/*  border: 1px dashed white;*/
+  text-align: center;
+/*  font-family: 'Montserrat Subrayada', sans-serif;*/
+  background: #00C8C8;
+  color: #007C7C;
+  font-size: 30px;
+  padding: 5px 0 5px 0;
+}
+li {
+  display: inline-block;
+  margin: 0px 10px 0px 10px;
+  color: white;
+}
+a, a:hover {
+  text-decoration: none;
+}
+a:visited {
+  color: white;
+}
+button {
+  border: none;
+  margin: 15px 0 15px 0;
+  font-size: 40px;
+  font-family: 'Fredericka the Great', cursive;
+  background: #00C8C8;
+  color: #FFD300;
+}
+input {
+  border: none;
+  width: 360px;
+  height: 50px;
+  font-size: 40px;
+  font-family: 'Almendra Display', cursive;
+  margin: 15px 0 15px 0;
+}
+section {
+  text-align: left;
+  padding-left: 10px;
+}
+#poster {
+  text-align: center;
+  margin: 10px 0 10px 0;
+}
+img {
+  border: 2px solid #FFD300;
+}
+span {
+  color: #FFD300;
+}
+#title {
+  color: #FFD300;
+  font-size: 60px;
+}
+#stock_res {
+  text-align: center;
+
+}
+.not_head {
+  font-size: 60px;
+  text-align: left;
+  padding-top: 0px;
+}
+#about {
+  font-size: 20px;
+  padding-right: 10px;
+}
+#about p {
+  margin: 10px 0 10px;
+}

@@ -1,0 +1,10 @@
+@import 'colors';
+table {
+  tr:nth-child(odd) {
+    background: $odd_row
+  }
+  img {
+    height: 200px;
+    width: 200px;
+  }
+}

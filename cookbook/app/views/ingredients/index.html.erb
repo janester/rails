@@ -1,0 +1,11 @@
+<ol>
+  <% @ingredients.each do |ingredient| %>
+    <li><%= link_to(ingredient.name, ingredient) %>
+      <ul>
+        <li><%= image_tag(ingredient.image) %></li>
+        <li><%= ingredient.measurement %></li>
+        <li><%= ingredient.cost %></li>
+      </ul>
+    </li>
+  <% end %>
+</ol>

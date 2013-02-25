@@ -1,0 +1,12 @@
+
+<div>
+  <div><%= link_to(@ingredient.name, @ingredient) %></div>
+  <div><%= image_tag(@ingredient.image) %></div>
+  <div>Measurement: <%= @ingredient.measurement %></div>
+  <div>Cost: <%= number_to_currency(@ingredient.cost) %></div>
+</div>
+
+
+<%= link_to("Delete", @ingredient, :method => :delete, :confirm => "Are you sure you want to delete this?") %>
+
+<%= link_to("Edit", edit_ingredient_path, :method=>:get) %>

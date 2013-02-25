@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Basics</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="/home">home</a></li>
+      <li><a href="/faq">faq</a></li>
+      <li><a href="/about">about</a></li>
+      <li><a href="/dogs">dogs</a></li>
+      <li><a href="/dogs/faq">dogs faq</a></li>
+      <li><a href="/dogs/new">new dog</a></li>
+
+    </ul>
+  </nav>
+
+<%= yield %>
+
+</body>
+</html>

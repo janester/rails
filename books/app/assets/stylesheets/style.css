@@ -1,0 +1,109 @@
+@import url(http://fonts.googleapis.com/css?family=UnifrakturCook:700|Special+Elite);
+
+body {
+  background: url("/assets/libraryback.jpg") repeat;
+  width: 1100px;
+  margin: auto;
+  text-align: center;
+  font-family: 'Special Elite', cursive;
+}
+#head_bar {
+  background: #A6592D;
+  position: fixed;
+  z-index: 1;
+  text-align: center;
+  padding: 10px;
+  width: 1000px;
+  margin-left: 40px;
+  color: #400101;
+  box-shadow:4px 4px 10px #333333, -4px -4px 10px #333333
+}
+h1 {
+  font-size: 100px;
+  font-family: 'UnifrakturCook', cursive;
+}
+h2, h3 {
+  font-family: 'UnifrakturCook', cursive
+}
+h3 {
+  font-size: 40px;
+}
+#h3{
+  text-align: left;
+  padding-left: 5px;
+}
+
+nav li {
+  display: inline-block;
+  font-size: 30px;
+}
+#cont {
+  width: 1000px;
+  margin: auto;
+  position: relative;
+  top: 160px;
+}
+
+#book_cont {
+  width: 1000px;
+  margin: 0px;
+}
+.book_section, .author_section {
+  display: inline-block;
+  background: #A62929;
+  width: 300px;
+  height: 360px;
+  margin: 10px;
+  text-align: center;
+  padding: 10px 0 10px 0;
+  border-radius: 10px;
+  box-shadow:4px 4px 10px #333333, -4px -4px 10px #333333
+}
+
+.book_section img, .author_section img {
+  width: 200px;
+  height: 260px;
+  border: 1px solid black;
+  margin: 5px;
+}
+
+a, a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #F2F2F2;
+}
+
+#edit_del {
+  margin-top: 15px;
+  font-size: 30px;
+}
+#show {
+  height: 405px;
+}
+.new_cont {
+  background: #A62929;
+  padding: 20px;
+  width: 300px;
+  height: 250px;
+  margin: auto;
+  text-align: left;
+  border-radius: 10px;
+  box-shadow:4px 4px 10px #333333, -4px -4px 10px #333333
+}
+h2 {
+  margin-bottom: 10px;
+  font-size: 40px;
+}
+
+input {
+  border: none;
+  margin: 10px 0 10px 10px;
+  height: 20px
+}
+#book {
+  height: 300px;
+}
+

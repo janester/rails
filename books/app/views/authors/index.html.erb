@@ -1,0 +1,11 @@
+<div id="author_cont">
+  <% @authors.each do |author| %>
+    <section class="author_section">
+      <div><%= link_to(author.name, author) %></div>
+      <div class="author_img"><%= image_tag(author.image) %></div>
+      <div><span>Age: </span><%= author.age %></div>
+      <div><span>Awards: </span><%= author.awards %></div>
+    </section>
+
+  <% end %>
+</div>

@@ -1,0 +1,10 @@
+%h1 Songs
+%table
+  - @songs.each do |song|
+    -if song.name != nil
+      %tr
+        %td= link_to(song.name, song_path(song.id))
+        %td= image_tag(song.image)
+        -if @current_user.present? && @current_user.is_admin
+          %td= link_to("Edit", edit_song_path(song.id), :class=>"button radius")
+          %td= link_to("Delete", song, :method => :delete, :class=>"button radius alert")

@@ -1,0 +1,13 @@
+.row
+  .five.columns
+    =render(:partial => 'shared/errors', :locals => {:object => @mixtape})
+
+    =form_for @mixtape do |f|
+      =f.label :name
+      =f.text_field :name
+      -@current_user.mixtapes.order(:name).each do |mixtape|
+        -mixtape.songs.each do |song|
+          %span= song.name
+          %span= check_box_tag("mixtape[song_ids][]", song.id, song.in?(@mixtape.songs))
+      %br
+      =f.submit nil, :class => 'button radius'

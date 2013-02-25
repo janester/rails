@@ -1,0 +1,9 @@
+%h1 Albums
+%table
+  - @albums.each do |album|
+    %tr
+      %td= link_to(album.name, album_path(album.id))
+      %td= image_tag(album.image)
+      -if @current_user.present? && @current_user.is_admin
+        %td= link_to("Edit", edit_albums_path(album.id), :class=>"button radius")
+        %td= link_to("Delete", album, :method => :delete, :class=>"button radius alert")

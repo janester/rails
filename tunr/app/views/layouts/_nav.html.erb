@@ -1,0 +1,34 @@
+<!-- Header and Nav -->
+<div class="row">
+<!--   <div class="two columns">
+    <h1><%= image_tag("/assets/soundwaves.jpg")%></h1>
+  </div> -->
+<div class="twelve columns">
+
+  <ul class="nav-bar right">
+      <li><%= link_to("Home", root_path) %></a></li>
+      <li class="has-flyout">
+        <a href="#">Browse</a>
+        <a href="#" class="flyout-toggle"><span> </span></a>
+        <ul class="flyout" style="display: none; ">
+          <li><%= link_to("Artists", artists_path) %></li>
+          <li><%= link_to("Albums", albums_path) %></li>
+          <li><%= link_to("Genres", genres_path) %></li>
+          <li><%= link_to("Songs", songs_path) %></li>
+        </ul>
+      </li>
+      <%== intellinav %>
+    </ul>
+
+</div>
+
+
+<!-- <div class="three columns">
+  <h1><%= image_tag("/assets/soundwaves.jpg")%></h1>
+</div>
+<div class="nine columns">
+
+</div>
+</div> -->
+
+<!-- End Header and Nav -->

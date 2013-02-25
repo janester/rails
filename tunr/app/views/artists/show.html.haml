@@ -1,0 +1,10 @@
+%h1= @artist.name
+-if @artist.image != nil
+  %div= image_tag(@artist.image)
+-if @artist.albums != nil
+  %h3 Albums
+  %table
+    -@artist.albums.each do |album|
+      %tr
+        %td= link_to(album.name, album_path(album.id))
+        %td= image_tag(album.image)

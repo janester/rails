@@ -1,0 +1,28 @@
+%h1= @song.name
+-if @song.image != nil
+  %div= image_tag(@song.image)
+  %br
+-if @song.artist != nil
+  %div
+    %span Artist:
+    %span= link_to(@song.artist.name, artist_path(@song.artist.id))
+    %br
+-if @song.album != nil
+  %div
+    %span Album:
+    %span= link_to(@song.album.name, album_path(@song.album.id))
+    %br
+
+
+
+
+=form_tag songs_bought_path, :method => 'post' do
+  =hidden_field_tag('song_id', @song.id)
+  -@current_user.mixtapes.order(:name).each do |mixtape|
+    %div
+      %span= mixtape.name
+      %span= check_box_tag "song[mixtape_ids][]", mixtape.id, mixtape.in?(@song.mixtapes.to_a)
+  -if @current_user.balance >= @song.price
+    =submit_tag 'Buy', :class => 'button radius'
+  -else
+    =submit_tag 'Buy', :class => 'button disabled'

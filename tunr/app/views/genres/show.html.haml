@@ -1,0 +1,9 @@
+%h1= @genre.name
+/ -if @genre.image != nil
+/   %div= image_tag(@genre.image)
+-if @genre.songs != nil
+  %table
+    -@genre.songs.each do |song|
+      %tr
+        %td= link_to(song.name, song_path(song.id))
+        %td= image_tag(song.image)

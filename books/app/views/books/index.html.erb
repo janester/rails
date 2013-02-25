@@ -1,0 +1,20 @@
+<div id="book_cont">
+  <% @books.each do |book| %>
+    <section class="book_section">
+      <div class="book_title"><%= link_to(book.title, book) %></div>
+      <div><%= image_tag(book.cover) %></div>
+      <div><span>Released: </span>
+        <% if book.released.nil? %>
+          <span></span>
+          <% else %>
+          <%= book.released.strftime("%B %d, %Y") %>
+        <% end %>
+      </div>
+      <div><span>Publisher: </span><%= book.publisher %></div>
+      <div><span>Genre: </span><%= book.genre %></div>
+    </section>
+
+  <% end %>
+</div>
+
+

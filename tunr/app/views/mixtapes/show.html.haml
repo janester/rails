@@ -1,0 +1,9 @@
+%h1= @mixtape.name
+
+-if @mixtape.songs != nil
+  %table
+    -@mixtape.songs.each do |song|
+      %tr
+        %td= link_to(song.name, song_path(song.id))
+        %td= image_tag(song.image)
+        %td= audio_tag(song.filename, :controls => true)
