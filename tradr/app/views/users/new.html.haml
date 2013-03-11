@@ -1,0 +1,16 @@
+.row
+  .small-8.columns
+    %h1 Make a Tradr Account
+.row
+  .small-6.small-centered.columns
+    =form_for @user do |f|
+      =f.label :email
+      =f.text_field :email, :autofocus => true, :placeholder => "jane@doe.com"
+      =f.label :password
+      =f.password_field :password, :placeholder => "example: abc"
+      =f.label :password_confirmation
+      =f.password_field :password_confirmation, :placeholder => "example: abc"
+      =f.label :cash_balance
+      =f.number_field :cash_balance, :placeholder => "$500.00"
+      =f.submit "Create Account", :class=>"button radius"
+      =link_to("Cancel", "#", :class => "button radius alert", :id => "cancel_new_user")

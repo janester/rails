@@ -1,0 +1,7 @@
+=form_for @stock, :remote => true do |f|
+  =f.label :symbol
+  =f.text_field :symbol, :autofocus => true, :placeholder => "aapl"
+  =f.label :quantity
+  =f.number_field :quantity, :placeholder => "10"
+  =f.submit "Add Stock", :class=>"button radius"
+  =link_to("Cancel", "#", :class => "button radius alert", :id => "cancel_new_stock")

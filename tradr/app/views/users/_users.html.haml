@@ -1,0 +1,11 @@
+%tr
+  %th Email
+  %th Cash Balance
+  %th Stock Balance
+  %th Total Balance
+-@users.each do |user|
+  %tr
+    %td= user.email
+    %td= user.cash_balance
+    %td= user.stock_balance
+    %td= user.cash_balance + user.stock_balance

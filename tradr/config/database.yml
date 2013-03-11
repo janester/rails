@@ -1,0 +1,9 @@
+
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: tradr_development
+  pool: 5
+  host: localhost
+  username: janesternbach
+  password:

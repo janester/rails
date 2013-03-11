@@ -1,0 +1,16 @@
+.row#header
+  .small-3.columns Symbol
+  .small-2.columns Price
+  .small-2.columns Quantity
+  .small-2.columns ID
+  .small-3.columns Chart
+.row
+  .small-12.columns
+    %hr
+-@stocks.each do |stock|
+  .row.stock_info
+    .small-3.columns= stock.symbol
+    .small-2.columns= stock.bought_price
+    .small-2.columns= stock.quantity
+    .small-2.columns= stock.id
+    .small-3.columns= link_to("Chart", "#", :class => "button radius tiny chart_btn")

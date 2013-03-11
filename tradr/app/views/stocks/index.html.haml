@@ -1,0 +1,29 @@
+.row
+  .small-22.columns
+    %h2= "#{@current_user.email}'s Stocks"
+.row
+  .small-6.small-centered.columns
+    = link_to("Add", new_stock_path, :remote => true, :class => "button radius", :id => "show_stock_form_btn")
+    #add_stock_form
+    / .row#chart_container
+    /   .small-12.columns
+    /     =link_to("stop", "#", :class => "button radius stop")
+    /     #chart
+    #stock_table
+      .row#header
+        .small-3.columns Symbol
+        .small-2.columns Price
+        .small-2.columns Quantity
+        .small-2.columns ID
+        .small-3.columns Chart
+      .row
+        .small-12.columns
+          %hr
+      -@stocks.each do |stock|
+        .row.stock_info
+          .small-3.columns= stock.symbol
+          .small-2.columns= stock.bought_price
+          .small-2.columns= stock.quantity
+          .small-2.columns= stock.id
+          .small-3.columns= link_to("Chart", "#", :class => "button radius tiny chart_btn")
+
