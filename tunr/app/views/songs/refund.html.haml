@@ -1,0 +1,33 @@
+%h1 Return
+%h2= @song.name
+%table
+  -if @song.image != nil
+    %tr
+      %td= image_tag(@song.image)
+  -if @song.artist != nil
+    %tr
+      %td
+        %span Artist:
+        %span= link_to(@song.artist.name, artist_path(@song.artist.id))
+  -if @song.album != nil
+    %tr
+      %td
+        %span Album:
+        %span= link_to(@song.album.name, album_path(@song.album.id))
+  %tr
+    %td
+      %span Your Current Balance:
+      %span= @current_user.balance
+
+  %tr
+    %td
+      %span Refund Price:
+      %span= number_to_currency(@song.price*0.7)
+
+  %tr
+    %td
+      %span Balance After Refund:
+      %span= number_to_currency(@current_user.balance+(@song.price*0.7))
+
+  %tr
+    %td= link_to("Return", returned_song_path, :method => :post, :class=> 'button radius alert', :confirm => "Are you sure?")

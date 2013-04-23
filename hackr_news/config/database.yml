@@ -1,0 +1,10 @@
+
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: hackr_news_development
+  pool: 5
+  host: localhost
+  username: janesternbach
+  password:
+

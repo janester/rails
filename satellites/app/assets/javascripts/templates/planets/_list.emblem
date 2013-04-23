@@ -1,0 +1,8 @@
+table
+  thead
+    th Name
+    th Image
+  each model
+    tr
+      td: linkTo "planets.show" this: name
+      td: img src=image

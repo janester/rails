@@ -1,0 +1,22 @@
+h3 Contacts
+table
+  thead
+    th First
+    th Last
+    th DOB
+    th Phone
+    th Email
+    th
+    / th
+  each model
+    tr
+      td= this.first
+      td= this.last
+      td= this.dob
+      td= this.phone
+      td= this.email
+      td
+    linkTo 'persons.show' this: = first
+
+outlet
+

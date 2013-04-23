@@ -1,0 +1,21 @@
+%h1 WDI Bank
+
+%div
+  %span.title Checking
+  %span Balance:
+  %span#cbalance= 1000
+  %br
+  = text_field_tag "checking"
+  %br
+  = submit_tag "Withdraw", :id => "checkingw"
+  = submit_tag "Deposit", :id => "checkingd"
+
+%div
+  %span.title Savings
+  %span Balance:
+  %span#sbalance= 500
+  %br
+  = text_field_tag "savings"
+  %br
+  = submit_tag "Withdraw", :id => "savingw"
+  = submit_tag "Deposit", :id => "savingd"

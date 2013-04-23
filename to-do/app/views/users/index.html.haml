@@ -1,0 +1,14 @@
+.row
+  .twelve.columns
+    %h1 All To Do Users
+
+.row
+  .twelve.columns
+    %table
+      %tr
+        %td User Name
+        %td User Email
+      -@users.each do |user|
+        %tr
+          %td= user.name
+          %td= user.email

@@ -1,0 +1,2 @@
+-if @current_user.present?
+  =link_to("Logout | #{@current_user.username}", login_path, :method => :delete, :class => "button radius success")

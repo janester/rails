@@ -1,0 +1,26 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: posterous_development
+  pool: 5
+  host: localhost
+  username: janesternbach
+  password:
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: posterous_test
+  pool: 5
+  host: localhost
+  username: janesternbach
+  password:
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: posterous_production
+  pool: 5
+  host: localhost
+  username: janesternbach
+  password:

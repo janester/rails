@@ -1,0 +1,24 @@
+%h1 Tiny Dancer
+#song_name
+#audio_tag
+  =audio_tag(nil, :controls => true)
+
+#graphics
+  %svg
+
+%table
+  %tr
+    %th Artist
+    %th Album
+    %th Song Name
+    %th Track
+    -@artists.each do |artist|
+      -artist.albums.each do |album|
+        -album.songs.each do |song|
+          %tr
+            %td= artist.name
+            %td= album.name
+            %td.song{:data => {filename: song.filename, track:song.track, name:song.name}}
+              = link_to(song.name, "#")
+            %td= song.track
+

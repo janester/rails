@@ -1,0 +1,10 @@
+h1 Satellites
+.row
+  .large-5.columns
+    linkTo "index" class="button small" | Home
+    linkTo "about" class="button small" | About
+    linkTo "faq" class="button small" | FAQ
+    linkTo "planets" class="button small" | Planets
+.row
+  .large-12.columns
+    outlet

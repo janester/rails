@@ -5,7 +5,7 @@ function hide_add_stock_form()
 }
 var timer = null;
 var id;
-var times_prices = [];
+var quotes = {};
 
 function start_timer()
 {
@@ -19,6 +19,8 @@ function start_timer()
   chart_cont.append(button).append(chart);
   var row = $(this).parent().parent();
   chart_cont.insertAfter(row);
+  quotes[id] = [];
+
   timer = setInterval(get_chart_info, 1000);
 }
 
@@ -34,9 +36,9 @@ function get_chart_info()
 function add_info_to_array(price_obj)
 {
   var time_price = {time:moment().format("YYYY-MM-DD HH:mm:ss"), price:price_obj.price};
-  times_prices.push(time_price);
-  if(times_prices.length > 60) times_prices.shift();
-  stock_obj = {array:times_prices, sym:price_obj.sym, id:price_obj.id};
+  quotes[price_obj.id].push(time_price);
+  if(quotes[price_obj.id].length > 60) quotes[price_obj.id].shift();
+  stock_obj = {array:quotes[price_obj.id], sym:price_obj.sym, id:price_obj.id};
   show_stock_chart(stock_obj);
 
 }

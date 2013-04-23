@@ -1,0 +1,28 @@
+
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: scrabble_development
+  pool: 5
+  host: localhost
+  username: janesternbach
+  password:
+
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: scrabble_test
+  pool: 5
+  host: localhost
+  username: janesternbach
+  password:
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: scrabble_production
+  pool: 5
+  host: localhost
+  username: janesternbach
+  password:

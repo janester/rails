@@ -1,0 +1,26 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: tiny-dancer_development
+  pool: 5
+  host: localhost
+  username: janesternbach
+  password:
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: tiny-dancer_test
+  pool: 5
+  host: localhost
+  username: janesternbach
+  password:
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: tiny-dancer_production
+  pool: 5
+  host: localhost
+  username: janesternbach
+  password:

@@ -1,0 +1,11 @@
+h3 New Satellite
+
+Ember.TextField valueBinding="name"
+Ember.TextField valueBinding="image"
+Ember.TextField valueBinding="diameter"
+Ember.TextField valueBinding="distance"
+Ember.TextField valueBinding="period"
+button{action save} Save
+button{action sat_cancel} Cancel
+
+

@@ -1,0 +1,14 @@
+.row
+  .large-5.large-centered.columns
+    h1.subheader Posterous
+    linkTo "index" class="button small" | Home
+    linkTo "posts" class="button small" | Posts
+    linkTo "about" class="button small" | About
+    linkTo "faq" class="button small" | FAQ
+    linkTo "posts.new" class="button small" | New
+.row
+  .large-12.columns
+    outlet
+
+
+

@@ -1,0 +1,4 @@
+-@photos.each do |photo|
+  .page_view
+    = photo.name
+    = image_tag(photo.file.thumb.url)

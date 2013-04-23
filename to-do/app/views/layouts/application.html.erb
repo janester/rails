@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ToDo</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE']}&sensor=false" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <!-- topbar -->
+  <div class="row">
+    <div class="twelve columns">
+      <nav class="top-bar">
+        <ul>
+          <!-- Title Area -->
+          <li class="name">
+            <h1><a href="/">Taskr</a></h1>
+          </li>
+          <li class="toggle-topbar"><a href="#"></a></li>
+        </ul>
+
+        <section>
+          <!-- Left Nav Section -->
+          <ul class="left">
+            <li class="divider"></li>
+            <li class="has-dropdown">
+              <a class="active" href="<%= tasks_path %>">Tasks</a>
+              <ul class="dropdown">
+                <li><a href="#">New Task</a></li>
+                <li><a href="#">Level 1</a></li>
+                <li><a href="#">Level 1</a></li>
+                <li class="divider"></li>
+                <li><label>Section Name</label></li>
+                <li><a href="#">Level 1</a></li>
+                <li><a href="#">Level 1</a></li>
+                <li><a href="#">Level 1</a></li>
+              </ul>
+            </li>
+            <li class="divider hide-for-small"></li>
+            <li class="has-dropdown">
+              <a class="active" href="<%= priorities_path %>">Priorities</a>
+              <ul class="dropdown">
+                <li><a href="#">New Priority</a></li>
+                <li><a href="#">Level 1</a></li>
+                <li><a href="#">Level 1</a></li>
+                <li class="divider"></li>
+                <li><label>Section Name</label></li>
+                <li><a href="#">Level 1</a></li>
+                <li><a href="#">Level 1</a></li>
+                <li><a href="#">Level 1</a></li>
+              </ul>
+            </li>
+            <li class="divider hide-for-small"></li>
+          </ul>
+
+          <!-- Right Nav Section -->
+          <ul class="right">
+            <li class="divider show-for-medium-and-up"></li>
+            <li><a href="<%= users_path %>">Users</a></li>
+            <li class="divider show-for-medium-and-up"></li>
+            <%== intellinav %>
+          </ul>
+        </section>
+      </nav>
+    </div>
+  </div>
+  <!-- end topbar -->
+
+<%= yield %>
+
+  <!-- Footer -->
+
+  <footer class="row">
+    <div class="twelve columns">
+      <hr />
+      <div class="row">
+        <div class="six columns">
+          <p>&copy; Copyright no one at all. Go to town.</p>
+        </div>
+        <div class="six columns">
+          <ul class="link-list right">
+            <li><a href="#">Link 1</a></li>
+            <li><a href="#">Link 2</a></li>
+            <li><a href="#">Link 3</a></li>
+            <li><a href="#">Link 4</a></li>
+            <li><a href="#">Link 5</a></li>
+            <li><a href="#">Link 6</a></li>
+            <li><a href="#">Link 7</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
+

@@ -1,0 +1,29 @@
+.preview {
+  width: 100px;
+  display: inline-block;
+}
+
+#albums {
+  width: 100%
+}
+
+#photos {
+  text-align: center;
+  margin-bottom: 50px;
+  background: #328395;
+  border-radius: 5px;
+  .page_view {
+  display: inline-block;
+  background: #493518;
+  padding: 5px;
+  margin: 10px 10px 10px 0px;
+  img {
+    margin-top: 10px;
+    }
+  }
+}
+
+body, h1, h3 {
+  background: #493518;
+  color: #F4F3DD;
+}

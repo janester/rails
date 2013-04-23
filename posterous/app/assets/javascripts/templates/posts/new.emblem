@@ -1,0 +1,7 @@
+h1 New Post
+.row
+  .large-5.columns
+    Ember.TextField valueBinding="title"
+    Ember.TextField valueBinding="author"
+    Ember.TextArea valueBinding="body"
+    button{action 'save'} class='button tiny radius success' Save

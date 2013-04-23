@@ -1,0 +1,27 @@
+window.app =
+  pusher: null
+  name : null
+  ready: ->
+    $("#channels_holder").on("click", ".not_selected", app.selected)
+    $("#channels_holder").on("click", ".selected", app.unselect)
+    app.pusher = new Pusher("<%= Pusher.key %>")
+  selected: ->
+    if($(".selected").length != 0)
+      $($(".selected")[0]).removeClass("selected").addClass("not_selected")
+    $(this).removeClass("not_selected").addClass("selected")
+    if(app.name != null)
+      app.pusher.unsubscribe(app.name)
+    app.name = $(this).children().text()
+    app.pusher.subscribe(app.name)
+    app.bind_events()
+  unselect: ->
+    $(this).removeClass("selected").addClass("not_selected")
+    _.each(app.pusher.channels.channels, (x) -> app.pusher.unsubscribe(x.name))
+  bind_events: ->
+    channel = app.pusher.channels.channels[app.name]
+    channel.bind("chat", app.chat)
+  chat: (data) ->
+    console.log(data)
+
+
+$(document).ready(app.ready)

@@ -1,0 +1,15 @@
+%h1 Flickr Lab
+%div
+  =text_field_tag "search", nil, :autofocus => true
+  %span speed:
+  =text_field_tag "speed1"
+  =button_tag "Search Flickr", :id => "enter"
+%div
+  %span width:
+  =text_field_tag "width"
+  %span height:
+  =text_field_tag "height"
+  =button_tag "Enter", :id => "wandh"
+  =button_tag "Reset", :id => "reset"
+
+#images

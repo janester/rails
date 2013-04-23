@@ -1,0 +1,17 @@
+.row
+  .small-12.columns
+    %h1= @album.name
+    #aid{:'data-album-id' => @album.id}
+.row
+  .small-8.small-cenetered.columns
+    %h3 Photos
+    .row
+      .small-3.columns
+        =link_to("Add Photos", new_photo_path(:album_id => @album.id), :remote => true, :class => "button radius")
+      .small-5.columns
+        #slider
+    #photo_form
+.row
+  .small-12.columns
+    #photos
+      = render :partial => "photos/photos"

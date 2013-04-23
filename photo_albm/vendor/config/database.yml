@@ -1,0 +1,27 @@
+
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: photo_albm_development
+  pool: 5
+  host: localhost
+  username: janesternbach
+  password:
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: photo_albm_test
+  pool: 5
+  host: localhost
+  username: janesternbach
+  password:
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: photo_albm_production
+  pool: 5
+  host: localhost
+  username: janesternbach
+  password:

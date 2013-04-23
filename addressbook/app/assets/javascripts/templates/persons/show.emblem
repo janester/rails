@@ -1,0 +1,9 @@
+if isEditing
+  Ember.TextField valueBinding="title"
+  Ember.TextField valueBinding="posted"
+  Ember.TextField valueBinding="author"
+  Ember.TextArea valueBinding="body"
+  button{action 'save'} Done
+else
+  p You are not editing
+

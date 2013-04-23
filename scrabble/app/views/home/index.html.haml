@@ -1,0 +1,25 @@
+-if @current_user.nil?
+  .row
+    .large-3.columns#login_form
+      = form_tag login_path, :remote => true do
+        =label_tag :username
+        =text_field_tag :username
+        =submit_tag :login
+-else
+  .row
+    .large-2.columns
+      #refresh
+        =link_to("Refresh Channels", refresh_channels_path, :remote => true, :class => "button radius small")
+      %h5 Channels
+      #channels_holder
+        = render :partial => "channels/channels"
+    .large-3.columns
+      %h5 New Channel
+      =form_for @channel, :remote => true do |f|
+        =f.label :name
+        =f.text_field :name
+        =f.submit
+    .large-7.columns
+
+
+

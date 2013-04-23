@@ -1,0 +1,36 @@
+.row
+  .small-12.columns
+    %h1 this is exercisr
+.row
+  .small-6.small-offset-1.columns
+    %h3 Your Exercises:
+.row
+  .small-4.small-offset-2.columns
+    %table#exercises
+      %tr
+        %td Activity
+        %td Amount
+        %td Units
+        %td Date
+      -@exercises.each do |exercise|
+        %tr
+          %td= exercise.activity
+          %td= exercise.amount
+          %td= exercise.unit
+          %td= exercise.completed_on
+    = link_to("New Exercise", new_exercise_path, :remote => true, :class => "button radius alert")
+  .small-4.columns
+    =select_tag("activities", options_for_select(@unique_exercises.map{|a| [a, a]}), :prompt => "Select an Exercise")
+    =link_to("Chart", "#", :class => "button radius", :id => "show_chart")
+    #chart
+#new_exercise
+/ .row
+/   .small-12.columns
+/     %a{"data-reveal-id" => "myModal", :href => "#"} Click Me For A Modal
+
+/ #myModal.reveal-modal
+/   %h2 Awesome. I have it.
+/   %p.lead Your couch.  It is mine.
+/   %p Im a cool paragraph that lives inside of an even cooler modal. Wins
+/   %a.close-reveal-modal ×
+

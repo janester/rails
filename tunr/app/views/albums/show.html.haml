@@ -1,9 +1,29 @@
 %h1= @album.name
 -if @album.image != nil
   %div= image_tag(@album.image)
--if @album.artists != nil
+-if @album.songs != nil
   %table
-    -@album.artists.each do |artist|
+    -@album.songs.each do |song|
       %tr
-        %td= link_to(artist.name, artist_path(artist.id))
-        %td= image_tag(artist.image)
+        %td= link_to(song.name, song_path(song.id))
+        %td= image_tag(song.image)
+        %td= audio_tag(song.filename, :controls => true)
+        -if @current_user.present? && !@current_user.is_admin
+          -if  !@current_user.mixtapes.map(&:songs).flatten.include?(song) && @current_user.balance >= song.price
+            %td= link_to(number_to_currency(song.price), purchase_song_path(song.id), :class=>'button radius', :confirm => "Are you sure?")
+            %td= link_to("Refund", refund_song_path(song.id), :class=> 'button disabled alert')
+          -else
+            %td= link_to(number_to_currency(song.price), purchase_song_path(song.id), :class=>'button disabled')
+            %td= link_to("Refund", refund_song_path(song.id), :class=> 'button radius alert')
+        -else
+          %td= link_to(number_to_currency(song.price), purchase_song_path(song.id), :class=>'button disabled')
+          %td= link_to("Refund", refund_song_path(song.id), :class=> 'button disabled alert')
+
+  -if @current_user.present? && !@current_user.is_admin
+    -if @current_user.albums.include?(@album)
+      %div= link_to("Buy Album", purchase_album_path, :class => 'button disabled')
+    -else
+      %div= link_to("Buy Album", purchase_album_path, :class => 'button radius', :confirm => "Are you sure?")
+
+
+

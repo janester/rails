@@ -1,0 +1,47 @@
+@import url(http://fonts.googleapis.com/css?family=Cousine|Vidaloka|Bangers);
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic);
+
+h1, h2, h3, h4, h5, h6 {
+  // font-family: 'Bangers', cursive;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  color: white;
+}
+
+label {
+  color: white;
+}
+
+.button {
+  font-weight: 100;
+}
+
+body {
+  // font-family: 'Cousine', sans-serif;
+  font-family: 'Lato', sans-serif;
+  font-weight: 100;
+  color: white;
+  background: url("/assets/type.png");
+  a {
+    color: lighten(purple, 20%);
+    &:hover {
+      color: white;
+    }
+  }
+  #logged_in {
+    margin-top: 20px;
+  }
+
+  #channels_list {
+    li {
+      margin-left: 20px;
+    }
+  }
+}
+
+.selected {
+  background-color: red;
+  a {
+    color: white;
+  }
+}

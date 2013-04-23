@@ -1,0 +1,10 @@
+.row
+  .small-12.columns
+    %h1 Users
+.row
+  .small-4.small-centered.columns
+    = link_to("New", new_user_path, :class => "button radius")
+    = link_to("New", new_user_path, :remote => true, :class => "button radius alert")
+    %ol#users
+      = render(:partial => "users")
+#new_user

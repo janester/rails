@@ -1,0 +1,8 @@
+h1.subheader Planets
+linkTo "planets.new" class="button"| New
+
+.row
+  .large-6.columns
+    partial "planets/list"
+  .large-6.columns
+    outlet

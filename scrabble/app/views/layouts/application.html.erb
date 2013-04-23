@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Scrabble</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <script src="http://js.pusher.com/2.0/pusher.min.js"></script>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="row">
+    <div class="large-5 columns">
+      <h1>SCRABBLE</h1>
+    </div>
+    <div class="large-4 columns">
+    </div>
+    <div class="large-3 columns">
+      <div id="logged_in"><%= render :partial => 'layouts/logged_in' %></div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <%= yield %>
+    </div>
+  </div>
+
+</body>
+</html>

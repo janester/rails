@@ -1,0 +1,7 @@
+<% if @channel.valid? %>
+  $("#channels_holder").empty().append("<%=j render :partial => 'channels/channels' %>")
+<% else %>
+  var div = $("<div>").text("Sorry! That Channel name was already taken.")
+  $("#login_form").append(div)
+  div.fadeOut(3000)
+<% end %>

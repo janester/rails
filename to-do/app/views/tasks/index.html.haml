@@ -1,0 +1,60 @@
+.row
+  .five.columns
+    %h1= "#{@current_user.name.titleize}'s Tasks"
+
+
+.row
+  .four.columns
+    #map
+      #map_canvas
+        %script display_map(40.7316, -72.9901, 3);
+    #task_form
+      =button_tag "New Task", :id =>"new_t", :class => "button radius"
+      %div.form.hide
+        =form_tag('/tasks') do
+          =label_tag "Title"
+          =text_field_tag "t_title"
+          =label_tag "Description"
+          =text_field_tag "t_desc"
+          =label_tag "Due Date"
+          =text_field_tag "t_duedate",nil, :placeholder => "YYYY-MM-DD"
+          =label_tag "Address"
+          =text_field_tag "t_address"
+          =label_tag "Priority"
+          =select_tag "priority_id", options_from_collection_for_select(@current_user.priorities, "id", "name"), :prompt => "Select a Priority"
+          =hidden_field_tag "tid"
+          =button_tag "Create", :id => "enter_t", :class => "button radius"
+          =button_tag "Edit", :id=> "update_t", :class => "button radius"
+        =button_tag "Cancel", :id => "cancel_t", :class => "button radius alert"
+  .eight.columns
+    %table#task_table
+      %tr
+        %td Completed
+        %td Priority
+        %td Title
+        %td Description
+        %td Due Date
+        %td Address
+      -@tasks.each do |task|
+        %script
+          = "tasks.push({id:#{task.id}, title:'#{task.title}', desc:'#{task.desc}', duedate:'#{task.duedate}', address:'#{task.address}', priority_id:'#{task.priority_id}', is_complete:'#{task.is_complete}', priority:{color:'#{task.priority.color}'}});"
+
+        %tr
+          %td.checkbox= check_box_tag("is_complete", "true", task.is_complete)
+          -if task.priority.present?
+            %td.hide= task.priority.id
+            %td
+              %div.color= task.priority.color
+          -else
+            %td.hide nil
+            %td
+              %div.color white
+          %td= task.title
+          %td= task.desc
+          %td= task.duedate
+          %td= task.address
+          %td.hide= task.id
+          %td.t_edit= link_to("Edit", nil, :class=>"button radius")
+          %td.t_delete= link_to("Delete", nil, :class=> "button radius")
+        %script
+          ="add_marker(#{task.lat}, #{task.long}, '#{task.title}');"

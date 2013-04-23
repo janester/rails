@@ -1,0 +1,11 @@
+%tr
+  %td Activity
+  %td Amount
+  %td Units
+  %td Date
+-@exercises.each do |exercise|
+  %tr
+    %td= exercise.activity
+    %td= exercise.amount
+    %td= exercise.unit
+    %td= exercise.completed_on

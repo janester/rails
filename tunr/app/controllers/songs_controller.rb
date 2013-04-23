@@ -1,6 +1,6 @@
 class SongsController < ApplicationController
-  before_filter :check_if_admin, :except => [:show, :index, :purchase, :bought]
-  before_filter :check_if_logged_in, :only => [:purchase]
+  before_filter :check_if_admin, :except => [:show, :index, :purchase, :bought, :refund, :returned]
+  before_filter :check_if_logged_in, :only => [:purchase, :refund]
 
   def index
     @songs = Song.order(:name)
@@ -51,12 +51,30 @@ class SongsController < ApplicationController
     @song = Song.find(params[:song_id])
     if @song.update_attributes(params[:song])
       @current_user.balance = @current_user.balance - @song.price
+      @current_user.mixtapes.first.songs << @song
       @current_user.save
       redirect_to(mixtapes_path)
     else
       render :purchase
     end
   end
+
+  def refund
+    @song = Song.find(params[:id])
+  end
+
+  def returned
+    @song = Song.find(params[:id])
+    @current_user.mixtapes.each do |mixtape|
+      if mixtape.songs.include?(@song)
+        mixtape.songs.delete(@song)
+      end
+    end
+    @current_user.balance = @current_user.balance + (@song.price*0.7)
+    @current_user.save
+    redirect_to(mixtapes_path)
+  end
+
 
 
 

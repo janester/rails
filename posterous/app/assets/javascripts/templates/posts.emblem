@@ -1,0 +1,11 @@
+h2 Posts
+ul
+  each model
+    li
+      button{action 'delete' this} class="button radius tiny" x
+      linkTo 'posts.show' this: = title
+
+outlet
+
+
+

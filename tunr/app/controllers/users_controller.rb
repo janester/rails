@@ -12,8 +12,9 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(params[:user])
-
     if @user.save
+      mixtape = Mixtape.create(:name => "#{@user.name}'s Library")
+      @user.mixtapes << mixtape
       redirect_to(root_path)
     else
       render :new

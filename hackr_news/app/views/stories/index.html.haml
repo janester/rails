@@ -1,0 +1,9 @@
+%h1 Hackr News
+.row
+  .small-1.columns
+    =form_tag scrape_stories_path, :remote => true do
+      =text_field_tag :num_pages, nil, :placeholder => "5"
+      =submit_tag "Scrape", :class => "button radius"
+.row
+  .small-12.columns
+    #stories

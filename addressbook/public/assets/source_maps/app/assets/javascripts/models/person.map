@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "",
+  "sourceRoot": "",
+  "sources": [
+    "/assets/source_maps/app/assets/javascripts/models/person.coffee"
+  ],
+  "names": [],
+  "mappings": "AAAA;CAAA,CAAA,CAAG,EAAkB,CAArB;CACE,CAAO,EAAP,CAAA,GAAO;CAAP,CACM,EAAN,IAAM;CADN,CAEK,CAAL,CAAA,EAAK;CAFL,CAGO,EAAP,CAAA,GAAO;CAHP,CAIO,EAAP,CAAA,GAAO;CALT,GAAa;CAAb"
+}

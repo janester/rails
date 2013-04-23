@@ -17,11 +17,13 @@ Tunr::Application.routes.draw do
     end
   end
 
-  resources :albums, :except => [:edit] do
-    collection do
-      get 'edit'
+  resources :albums do
+    member do
+      get 'purchase'
+      post 'bought'
     end
   end
+
 
   resources :genres, :except => [:edit] do
     collection do
@@ -32,10 +34,13 @@ Tunr::Application.routes.draw do
   resources :songs do
     member do
       get 'purchase'
+      get 'refund'
+      post 'returned'
     end
   end
 
   post '/songs/bought' => 'songs#bought'
+  # post '/songs/returned' => 'songs#returned'
 
 resources :mixtapes
 

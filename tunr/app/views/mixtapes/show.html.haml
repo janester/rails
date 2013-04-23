@@ -7,3 +7,4 @@
         %td= link_to(song.name, song_path(song.id))
         %td= image_tag(song.image)
         %td= audio_tag(song.filename, :controls => true)
+        %td= link_to('Return', refund_song_path(song.id), :method => :get, :class => 'button radius alert', :cofirm => "Are you sure? You will only recieve a 70% refund")

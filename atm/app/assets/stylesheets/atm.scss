@@ -1,0 +1,17 @@
+div {
+  display: inline-block;
+  border: 1px solid black;
+  width: 200px;
+  height: 200px;
+  padding: 10px;
+}
+
+.title {
+  display: block;
+}
+
+.alert {
+  border: 1px solid red;
+  background: red;
+  color: white;
+}

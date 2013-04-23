@@ -1,0 +1,21 @@
+%h1 this is paintr
+
+
+
+%div#color_input_container
+#selected
+%br
+%div.title Enter a Color
+=text_field_tag "input_color", nil, :autofocus => "true"
+=button_tag "enter", :id => "center"
+=button_tag "clear", :id => "cclear"
+#colors
+%div#image_input_container
+%div.title Enter an Image
+%img#img_selected
+%br
+=text_field_tag "input_image", nil, :autofocus => "true"
+=button_tag "enter", :id => "ienter"
+=button_tag "clear", :id => "iclear"
+#images
+#canvas

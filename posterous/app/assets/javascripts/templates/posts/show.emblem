@@ -1,0 +1,21 @@
+if isEditing
+  Ember.TextField valueBinding="title"
+  Ember.TextField valueBinding="posted"
+  Ember.TextField valueBinding="author"
+  Ember.TextArea valueBinding="body"
+  button{action 'save'} Done
+else
+  button{action 'edit'} Edit
+  br
+  br
+  table
+    thead
+      th Title
+      th Posted
+      th Author
+      th Body
+    tr
+      td= title
+      td= date posted
+      td= author
+      td= body

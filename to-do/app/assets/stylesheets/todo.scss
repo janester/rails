@@ -1,0 +1,35 @@
+.hide {
+  display: hidden;
+}
+
+.box {
+  height: 50px;
+  width: 50px;
+  border: 1px solid black;
+}
+
+.box:hover {
+  border: 1px solid red;
+}
+
+.up, .down {
+  height: 50px;
+  width: 50px;
+}
+
+.form_cont {
+  margin-top: 20px;
+}
+
+#map_canvas {
+  height: 500px;
+  border: 2px solid black;
+}
+
+#map {
+  margin-bottom: 20px;
+}
+
+.complete {
+  text-decoration: line-through;
+}

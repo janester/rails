@@ -1,0 +1,13 @@
+.row
+  .twelve.columns
+    %h1 Login to To Do
+.row
+  .four.columns
+  .four.columns
+    =form_tag '/login' do
+      =label_tag 'email'
+      =text_field_tag 'email', nil, :autofocus => true, :placeholder => "jane@doe.com"
+      =label_tag 'password'
+      =password_field_tag 'password'
+      =submit_tag 'Login to To Do', :class => 'button radius'
+  .four.columns

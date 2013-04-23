@@ -1,0 +1,24 @@
+.row
+  .small-12.columns
+    %h1 Photo Albm
+
+.row
+  .small-10.small-centered.columns
+    %h3 Albums
+    =link_to("Add Album", new_album_path, :remote => true, :class => "button radius")
+    #album_form
+    %table#albums
+      %tr
+        %th Album
+        %th # of Pictures
+        %th Preview
+      -@albums.each do |album|
+        %tr
+          %td= link_to(album.name, album_path(album.id))
+          %td= album.photos.length
+          %td
+            .preview= image_tag(album.photos[0].file.thumb.url) if album.photos[0].present?
+            .preview= image_tag(album.photos[1].file.thumb.url) if album.photos[1].present?
+            .preview= image_tag(album.photos[2].file.thumb.url) if album.photos[2].present?
+
+

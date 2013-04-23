@@ -1,0 +1,9 @@
+h1 AddressBook
+.row
+  .large-12.columns
+    linkTo "persons" class="button small" | Contacts
+    linkTo "about" class="button small" | About
+    linkTo "faq" class="button small" | FAQ
+.row
+  .large-12.columns
+    outlet

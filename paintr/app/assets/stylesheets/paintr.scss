@@ -1,0 +1,30 @@
+.color_box, .img_box {
+  height: 50px;
+  width: 50px;
+  display: inline-block;
+  margin: 5px;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+.paint {
+  width: 5px;
+  height: 5px;
+  border: 1px dashed black;
+  float: left;
+  opacity: 0.4;
+}
+
+#canvas {
+  border: 1px solid black;
+  height: 700px;
+  width: 700px;
+  background-repeat: no-repeat;
+  background-size:cover;
+
+}
+
+
+#image_input_container {
+  float: left;
+}

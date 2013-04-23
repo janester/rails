@@ -1,0 +1,35 @@
+.row
+  .one.columns
+  .five.columns
+    %h1= "#{@current_user.name.titleize}'s Priorities"
+
+    %table#priority_table
+      -@priorities.order(:ranking).reverse.each do |priority|
+        %script
+          = "priorities.push({id:#{priority.id}, name:'#{priority.name}', ranking:#{priority.ranking}, color:'#{priority.color}'});"
+        %tr
+          %td.pname= priority.name
+          %td.color= priority.color
+          %td.ranking.hide= priority.ranking
+          %td.id.hide= priority.id
+          %td.up= image_tag("arrow_up.png")
+          %td.down= image_tag("arrow_down.png")
+  .five.columns
+    .form_cont
+      =button_tag "New Priority", :id =>"new_p", :class => "button radius"
+      %div.form.hide
+        =form_tag do
+          =label_tag "Name"
+          =text_field_tag "Name", nil,  :id => "name"
+          =label_tag "Color"
+          =text_field_tag "Color", nil, :class => "minicolors"
+          =label_tag "Ranking"
+          =text_field_tag "Ranking", nil,  :id => "ranking"
+          =hidden_field_tag "ID", nil, :id => "pid"
+          =button_tag "Create", :id => "enter_p", :class => "button radius"
+          =button_tag "Edit", :id=> "update_p", :class => "button radius"
+        =button_tag "Cancel", :id => "cancel_p", :class => "button radius alert"
+  .one.columns
+
+
+

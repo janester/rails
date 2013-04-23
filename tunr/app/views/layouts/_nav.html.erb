@@ -3,22 +3,23 @@
 <!--   <div class="two columns">
     <h1><%= image_tag("/assets/soundwaves.jpg")%></h1>
   </div> -->
-<div class="twelve columns">
+<div class="top-bar">
 
-  <ul class="nav-bar right">
-      <li><%= link_to("Home", root_path) %></a></li>
-      <li class="has-flyout">
-        <a href="#">Browse</a>
-        <a href="#" class="flyout-toggle"><span> </span></a>
-        <ul class="flyout" style="display: none; ">
-          <li><%= link_to("Artists", artists_path) %></li>
-          <li><%= link_to("Albums", albums_path) %></li>
-          <li><%= link_to("Genres", genres_path) %></li>
-          <li><%= link_to("Songs", songs_path) %></li>
-        </ul>
-      </li>
-      <%== intellinav %>
+  <ul class="left">
+      <li class="name"><h1><a href="/">Tunr</a></h1></li>
+      <li class="divider show-for-medium-and-up"></li>
+        <li class="has-dropdown">
+          <a href="#">Browse</a>
+          <ul class="dropdown">
+            <li><%= link_to("Artists", artists_path) %></li>
+            <li><%= link_to("Albums", albums_path) %></li>
+            <li><%= link_to("Genres", genres_path) %></li>
+            <li><%= link_to("Songs", songs_path) %></li>
+          </ul>
     </ul>
+  <ul class="right">
+      <%== intellinav %>
+  </ul>
 
 </div>
 
@@ -32,3 +33,15 @@
 </div> -->
 
 <!-- End Header and Nav -->
+
+<!-- <ul class="right">
+
+
+
+                    <li class="">
+        <a href="#">Browse</a>
+        <a href="#" class="has-dropdown"><span> </span></a>
+        <ul class="dropdown" style="display: none; ">
+
+        </ul>
+      </li> -->

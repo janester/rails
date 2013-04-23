@@ -1,0 +1,39 @@
+%h1 Purchase Album
+%h2= @album.name
+%div= image_tag(@album.image)
+%table
+  %tr
+    %td
+      %span Artist(s):
+      %span= @album.artists.map(&:name).join(", ")
+  %tr
+    %td
+      %span Song(s):
+      %ul
+      -@album.songs.each do |song|
+        %li= link_to(song.name, song_path(song.id))
+  %tr
+    %td
+      %span Your Current Balance:
+      %span= number_to_currency(@current_user.balance)
+
+  %tr
+    %td
+      %span Price:
+      -owned_songs = []
+      -@current_user.mixtapes.first.songs.each do |song|
+        -if @album.songs.include?(song)
+          -owned_songs << song
+      -user_price = (@album.songs.map(&:price).sum)-(owned_songs.map(&:price).sum)
+      %span= number_to_currency(user_price)
+
+  %tr
+    %td
+      %span Your Balance After Purchase:
+      %span= number_to_currency(@current_user.balance - user_price)
+
+-if @current_user.balance < user_price
+  %div= link_to("Buy", bought_album_path, :method => :post, :class => 'button disabled')
+-else
+  %div= link_to("Buy", bought_album_path, :method => :post, :class => 'button radius', :confirm => "Are you sure?")
+

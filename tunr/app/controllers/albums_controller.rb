@@ -1,5 +1,6 @@
 class AlbumsController < ApplicationController
-  before_filter :check_if_admin, :except => [:show, :index]
+  before_filter :check_if_admin, :except => [:show, :index, :purchase, :bought]
+  before_filter :check_if_logged_in, :only => [:purchase]
   def index
     @albums = Album.order(:name)
   end
@@ -18,7 +19,7 @@ class AlbumsController < ApplicationController
   end
 
   def edit
-    @album = Album.find(params[:format])
+    @album = Album.find(params[:id])
     render :new
   end
 
@@ -30,6 +31,7 @@ class AlbumsController < ApplicationController
       render :new
     end
   end
+
   def show
     @album = Album.find(params[:id])
   end
@@ -40,4 +42,28 @@ class AlbumsController < ApplicationController
     redirect_to(albums_path)
   end
 
+  def purchase
+    @album = Album.find(params[:id])
+  end
+
+  def bought
+    @album = Album.find(params[:id])
+    owned_songs = []
+    @album.songs.each do |song|
+      if !@current_user.mixtapes.first.songs.include?(song)
+        @current_user.mixtapes.first.songs << song
+      else
+        owned_songs << song
+      end
+    end
+    price = @album.songs.map(&:price).sum - owned_songs.map(&:price).sum
+    @current_user.balance = @current_user.balance - price
+    @current_user.albums << @album
+    @current_user.save
+    redirect_to(albums_path)
+  end
+
+
+
 end
+
